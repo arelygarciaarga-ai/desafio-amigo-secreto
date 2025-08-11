@@ -26,3 +26,19 @@ function actualizarLista() {
     ul.appendChild(li);
   });
 }
+// Sortea un nombre al azar y lo muestra en <ul id="resultado">
+function sortearAmigo() {
+  if (amigos.length === 0) {
+    alert('Primero agrega al menos un nombre');
+    return;
+  }
+
+  const indice = Math.floor(Math.random() * amigos.length);
+  const ganador = amigos[indice];
+
+  const resultado = document.getElementById('resultado');
+  resultado.innerHTML = '';
+  const li = document.createElement('li');
+  li.textContent = `🎉 Amigo secreto: ${ganador}`;
+  resultado.appendChild(li);
+}
